@@ -180,7 +180,8 @@ def handle_calculate_IK(req):
             
             #and last joints - find the full rotation matrix from joints 3, 6
             R3_6 = R0_3.transpose() * ROT_EE
-            
+            pprint(R3_6)            
+
             #solve individual equiations for rotations of each wrist joint:
             theta_4 = atan2(R3_6[2,2], -R3_6[0,2])
             theta_5 = atan2(sqrt(R3_6[0,2]*R3_6[0,2] +R3_6[2,2]*R3_6[2,2]),R3_6[1,2])
